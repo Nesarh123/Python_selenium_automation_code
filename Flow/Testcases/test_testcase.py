@@ -63,20 +63,20 @@ class TestCase:
         self.bill.price(project_type, project_price, sku_price, sku_freelancer_price, word_price, word_freelancer_price)
         time.sleep(5) # Wait for next page transition
 
-        # # Step 6: Send order for production
-        # self.send = Send(self.driver)
-        # self.send.send()
-        # time.sleep(5) # Wait for cataloguer selection screen
-        #
-        # # Step 7: Select Cataloguer and Date, then Submit for Production
-        # self.submit = submit(self.driver)
-        # self.submit.submit_prod(assign_team, date)
-        # time.sleep(5)  # Wait for order submission confirmation
-        #
-        # # Step 8: Assign the task to a user using bulk assign
-        # self.assign = Assignee(self.driver)
-        # self.assign.assigning(flow_type, role, role_tat, specific_date, specific_tat_i, specific_date_i, role_assignee_user, number_of_tasks)
-        # time.sleep(5) # Wait for SKU Viewer to reload
+        # Step 6: Send order for production
+        self.send = Send(self.driver)
+        self.send.send()
+        time.sleep(5) # Wait for cataloguer selection screen
+
+        # Step 7: Select Cataloguer and Date, then Submit for Production
+        self.submit = submit(self.driver)
+        self.submit.submit_prod(assign_team, date)
+        time.sleep(5)  # Wait for order submission confirmation
+
+        # Step 8: Assign the task to a user using bulk assign
+        self.assign = Assignee(self.driver)
+        self.assign.assigning(flow_type, role, role_tat, specific_date, specific_tat_i, specific_date_i, role_assignee_user, number_of_tasks)
+        time.sleep(5) # Wait for SKU Viewer to reload
 
         # Step 9: Complete the order by clicking Edit and Submit
         # self.complete = Complete(self.driver)
