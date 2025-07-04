@@ -127,6 +127,25 @@ class baseclass:
         return wait.until(EC.presence_of_all_elements_located((locator_type, locator_value)))
 
     # -------------------------------------
+    # Method: is_element_present
+    # -------------------------------------
+    def is_element_present(self, locator_type, locator_value):
+        """
+         Utility method to check if a web element is present on the page
+       Args:
+            locator_type: Type of locator
+            locator_value: The locator string
+        Returns:
+            WebElement is present on the page
+        """
+        try:
+            # Try to locate the element using the specified locator strategy
+            self.driver.find_element(locator_type, locator_value)
+            return True # Element is found, return True
+        except:
+            return False # Element is not found, return False
+
+    # -------------------------------------
     # Method: window_handle
     # -------------------------------------
     def window_handle(self):
